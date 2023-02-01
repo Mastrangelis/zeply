@@ -1,3 +1,197 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    @apply text-base p-0 m-0;
+  }
+
+  body {
+    @apply flex flex-col content-between;
+  }
+  main {
+    @apply flex-1;
+  }
+  section {
+    @apply py-10;
+  }
+
+  .layout {
+    @apply h-[100vh] flex flex-col items-stretch justify-between;
+  }
+
+  .container {
+    @apply h-full mx-auto w-full max-w-[1400px];
+  }
+}
+
+@layer components {
+  /********** TOASTER *************/
+
+  .Toastify__toast-icon {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .Toastify__toast-container {
+    width: unset !important;
+  }
+
+  .Toastify__toast-container {
+    width: unset !important;
+  }
+
+  /** SEARCH **/
+  .search,
+  .search form {
+    @apply flex-1 flex items-center;
+  }
+
+  .search input {
+    @apply min-h-[38px] bg-transparent flex-1 outline-none px-3;
+  }
+
+  .search input:focus {
+    @apply outline-none;
+  }
+
+  .searchbar {
+    @apply w-2/4 border-2 rounded-3xl border-borderColor flex items-center h-[42px];
+  }
+
+  .searchbar__select {
+    @apply py-5 rounded-2xl border-r-2;
+  }
+
+  .searchbar__search-btn {
+    @apply w-[32px] h-[32px] flex items-center justify-center cursor-pointer pr-2.5;
+  }
+
+  .no-search {
+    @apply h-full w-full flex items-center justify-center default-transition;
+  }
+  /** CARD **/
+
+  .card {
+    @apply mt-5 card-shadow relative flex flex-col border-2 rounded-sm border-borderColor bg-white bg-clip-border break-words min-w-0;
+  }
+
+  .card-shadow {
+    @apply shadow-[1px_4px_11px_3px_rgba(1,9,24,0.12)];
+  }
+
+  .card__header {
+    @apply h-[56px] border-b-2 border-borderColor flex items-center;
+  }
+
+  .accordion-card__collapse {
+    @apply flex items-center justify-center w-[26px] h-[26px] mr-3.5 cursor-pointer hover:bg-disabled rounded-md;
+  }
+
+  /** BADGE **/
+  .badge-in {
+    @apply bg-secondary-100;
+    position: relative;
+    padding-left: 1.15rem;
+    letter-spacing: 0.8px;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .badge-in::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    border-top: 0.7rem solid transparent;
+    border-bottom: 0.7rem solid transparent;
+    border-left: 0.7rem solid #fff;
+  }
+
+  /** HEADER - NAVBAR **/
+  .header {
+    @apply h-[116px] bg-section;
+  }
+
+  .header__wrapper {
+    @apply h-full flex items-center justify-between;
+  }
+
+  .header__title {
+    @apply flex items-center ml-2 font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-[#F28C28] to-[#FFBF00] tracking-wide;
+  }
+
+  .header__select-currency {
+    @apply flex-1  flex justify-end;
+  }
+
+  /** FOOTER **/
+  .footer {
+    @apply h-[76px] bg-section flex flex-col;
+  }
+
+  .footer__wrapper {
+    @apply flex items-center justify-between text-white font-bold text-lg;
+  }
+
+  .btc-img {
+    animation: float-btc 4s ease-in-out infinite;
+  }
+
+  /** TABS **/
+  .recentTxns-tab__card-content {
+    @apply overflow-y-auto h-[500px] pb-5;
+  }
+
+  /** BUTTONS **/
+  .subscribe-unsubscribe {
+    @apply default-color-transition whitespace-nowrap hover:opacity-80;
+  }
+
+  .subscribe-unsubscribe__btn {
+    @apply flex items-center justify-between bg-borderColor p-3 rounded-md tracking-wide cursor-pointer;
+  }
+
+  /** **/
+  .divider {
+    @apply opacity-75 my-4 border-t border-borderColor;
+  }
+
+  .spinner {
+    @apply border-[3px] border-dashed rounded-full animate-spin border-t-transparent;
+  }
+  .tabs-controller {
+    @apply mx-3 py-2 px-3 rounded-md bg-borderColor tracking-wide cursor-pointer default-color-transition whitespace-nowrap;
+  }
+
+  .h-fill {
+    height: -webkit-fill-available;
+  }
+  .default-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .default-color-transition {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+}
+
+@keyframes float-btc {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+  50% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translateY(-0.5rem);
+  }
+}

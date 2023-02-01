@@ -1,27 +1,66 @@
-# Next.js + Tailwind CSS Example
+# Zeply assignement
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+For the assignement you can find usefull information about the available scripts, the structure and how to run tests below.
 
-## Deploy your own
+For the project the following technologies and libraries are used
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- NextJS 13
+- React 18
+- Typescript
+- Framer motion for beautiful and smooth transitions
+- React skeleton loading
+- Many custom reusable components Toasters, Buttons, Cards, TextFields, etc.
+- Taildind CSS for styling
+- Jest testing library
+- Component Testing storybook (manual testing)
+- Dockerfile for containerizing the application
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Folder structure
 
-## How to use
+- Under app folder you will find the starter files as per NextJS 13 experimental feauture where you can define your appDir.
+- Under sections you will find section components that define the layout of the application such as (Layout, Navbar, Body, Footer)
+- Under components you will find all the components created for this project
+- Under constants folder you will find some files containing some constant variables that are used across the application.
+- Under context folder you will find context providers for variables and functions to be shared in components.
+- Under hooks folder you will find some custom react hooks that are used across the application.
+- Under utils folder you will find utility functions that are used across the application
+- Under types folder you will find the typescript types
+- Under **tests** folder you will find jest tests
+- Under stories folder you can find stories for component testing using storybook
+- Under styles you will find the global.css file that contains CSS classes
+- Dockerfile included in the root dir of the project
+- Configuration files such as (tailwind.config.js, tsconfig.json, next.config.js) can be found at the root dir of the project
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Application Screenshots
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Available Scripts
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+In the project directory, you can run:
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+### `npm start`
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+## Storybook
+
+Storybook is a frontend workshop for building UI components and pages in isolation.
+
+Stories capture the “known good” states of UI components.
+
+They’re a pragmatic, reproducible way to keep track of UI edge cases.
+
+Reuse stories to power automated tests.
+
+You can learn more about Storybook from the official [link](https://storybook.js.org/)
+
+### `npm run storybook`
+
+The above script will set up a development storybook server at port **6066**.
+
+You can visit the dev server at **http://localhost:6006/**
+
+When storybook dev server is up and running you will be able to see the following view
