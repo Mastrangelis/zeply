@@ -37,13 +37,31 @@ For the project the following technologies and libraries are used
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits (due to hot-reload).\
 You will also see any lint errors in the console.
+
+### Dockerfile
+
+To build the application using the provided Dockerfile you need to do the following steps
+
+1. Build the image
+
+```
+docker build -t zeply-assignement .
+```
+
+2. Run a container with that image when the build is finished (port should be 3000 due to proxy)
+
+```
+docker run --name <your-container-name> -p 3000:3000 zeply-assignement
+```
+
+3. Open http://localhost:3000 to view it in the browser.
 
 ## Storybook
 
