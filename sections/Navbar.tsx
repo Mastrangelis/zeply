@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="header">
+    <div data-testid="header" className="header">
       <Container>
         <div className="header__wrapper">
           <Image

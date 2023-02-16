@@ -57,6 +57,7 @@ const Select = ({
 
   return (
     <ReactSelect
+      data-testid="react-select"
       options={
         options as OptionsOrGroups<SelectOption, GroupBase<SelectOption>>
       }

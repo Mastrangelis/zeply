@@ -44,25 +44,27 @@ const CryptoIconSelect = ({
   };
 
   return (
-    <Select
-      options={options}
-      onChange={onChange}
-      components={{ Option: CryptoIconOption }}
-      placeholder="Select currency"
-      defaultValue={options.find(
-        (option: SelectOption) => option.cryptoIcon === selectedCurrency
-      )}
-      getOptionLabel={(
-        props: JSX.IntrinsicAttributes & CryptoIconOptionLabelProps
-      ) => <CryptoIconLabel {...props} />}
-      overrideStyles={{
-        control: (styles) => ({
-          ...styles,
-          minWidth: 110,
-          width: 110,
-        }),
-      }}
-    />
+    <div data-testid="react-select">
+      <Select
+        options={options}
+        onChange={onChange}
+        components={{ Option: CryptoIconOption }}
+        placeholder="Select currency"
+        defaultValue={options.find(
+          (option: SelectOption) => option.cryptoIcon === selectedCurrency
+        )}
+        getOptionLabel={(
+          props: JSX.IntrinsicAttributes & CryptoIconOptionLabelProps
+        ) => <CryptoIconLabel {...props} />}
+        overrideStyles={{
+          control: (styles) => ({
+            ...styles,
+            minWidth: 110,
+            width: 110,
+          }),
+        }}
+      />
+    </div>
   );
 };
 
