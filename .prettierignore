@@ -1,0 +1,5 @@
+# Ignore artifacts:
+target
+/.next
+build
+reports/

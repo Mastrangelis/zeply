@@ -1,41 +1,50 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
+    "compilerOptions": {
+        "baseUrl": ".",
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "paths": {
+            "@/components": ["components"],
+            "@/components/*": ["components/*"],
+            "@/sections": ["sections"],
+            "@/sections/*": ["sections/*"],
+            "@/constants": ["constants"],
+            "@/utils": ["utils"],
+            "@/utils/*": ["utils/*"],
+            "@/api": ["pages/api"],
+            "@/api/*": ["pages/api/*"],
+            "@/hooks": ["hooks"],
+            "@/hooks/*": ["hooks/*"],
+            "@/types": ["types"],
+            "@/types/*": ["types/*"]
+        }
+    },
+    "types": ["jest", "node", "react", "prettier", "next"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "jest.setup.ts",
+        "jest.config.js",
+        "__tests__/**/*.tsx"
     ],
-    "paths": {
-      "@/components": ["components"],
-      "@/components/*": ["components/*"],
-      "@/sections": ["sections"],
-      "@/sections/*": ["sections/*"],
-      "@/constants": ["constants"],
-      "@/utils": ["utils"],
-      "@/utils/*": ["utils/*"],
-      "@/api": ["pages/api"],
-      "@/api/*": ["pages/api/*"],
-      "@/hooks": ["hooks"],
-      "@/hooks/*": ["hooks/*"],
-      "@/types": ["types"],
-      "@/types/*": ["types/*"]
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+    "exclude": ["node_modules"]
 }

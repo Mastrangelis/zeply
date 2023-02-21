@@ -1,0 +1,10 @@
+node_modules
+target
+package-lock.json
+.vscode
+.idea/
+lint-staged.config.js
+prettierrc.json
+jest.config.js
+.next/
+reports/
