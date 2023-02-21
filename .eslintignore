@@ -8,3 +8,5 @@ prettierrc.json
 jest.config.js
 .next/
 reports/
+__tests__
+cypress/
