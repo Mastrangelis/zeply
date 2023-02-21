@@ -8,6 +8,7 @@ export default function Spinner({
 }: SpinnerProps) {
   return (
     <div
+      data-testid="spinner"
       className={clsx({
         spinner: true,
         "w-8 h-8": size !== "sm",

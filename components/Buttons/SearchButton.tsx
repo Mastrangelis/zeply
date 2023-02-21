@@ -20,7 +20,7 @@ const SearchButton = ({
       className={clsx({
         "searchbar__search-btn": true,
         "btn-disabled": isLoading,
-        " hover:cursor-pointer hover:opacity-50": !errorMessage,
+        "hover:cursor-pointer hover:opacity-50": !errorMessage,
         "opacity-50 cursor-not-allowed": errorMessage,
       })}
       onClick={onClick}

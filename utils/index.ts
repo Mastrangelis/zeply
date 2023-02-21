@@ -1,9 +1,7 @@
 const camelCaseToSpaceCamel = (s: string) => {
-  return (
-    s
-      .replace(/([A-Z])/g, " $1")
-      // uppercase the first character
-      .replace(/^./, (str: string) => str.toUpperCase())
+  let occurence = 1;
+  return s.replace(/([A-Z])/g, (match: string) =>
+    occurence++ === 1 ? match : ` ${match}`
   );
 };
 
