@@ -50,6 +50,7 @@ next-env.d.ts
 # Tests
 __tests__/*
 reports/
+cypress/
 
 # Tools
 .husky/*
