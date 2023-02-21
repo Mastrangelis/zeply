@@ -7,29 +7,34 @@ For the project the following technologies and libraries are used
 - NextJS 13
 - React 18
 - Typescript
+- Axios
+- React-Query
 - Framer motion for beautiful and smooth transitions
 - React skeleton loading
 - Many custom reusable components Toasters, Buttons, Cards, TextFields, etc.
 - Taildind CSS for styling
-- Jest testing library
+- Functional and Unit Testing with Jest/RTL
 - Component Testing storybook (manual testing)
 - Dockerfile for containerizing the application
+- Husky for pre-commit scripts
+- Eslint for linting code before commit
+- Prettier for formatting
 
 ## Folder structure
 
-- Under app folder you will find the starter files as per NextJS 13 experimental feauture where you can define your appDir.
-- Under sections you will find section components that define the layout of the application such as (Layout, Navbar, Body, Footer)
-- Under components you will find all the components created for this project
-- Under constants folder you will find some files containing some constant variables that are used across the application.
-- Under context folder you will find context providers for variables and functions to be shared in components.
-- Under hooks folder you will find some custom react hooks that are used across the application.
-- Under utils folder you will find utility functions that are used across the application
-- Under types folder you will find the typescript types
-- Under **tests** folder you will find jest tests
-- Under stories folder you can find stories for component testing using storybook
-- Under styles you will find the global.css file that contains CSS classes
+- Under **app** folder you will find the starter files as per NextJS 13 experimental feauture where you can define your appDir.
+- Under **sections** you will find section components that define the layout of the application such as (Layout, Navbar, Body, Footer)
+- Under **components you will find all the components created for this project
+- Under **constants folder you will find some files containing some constant variables that are used across the application.
+- Under **context folder you will find context providers for variables and functions to be shared in components.
+- Under **hooks folder you will find some custom react hooks that are used across the application.
+- Under **utils folder you will find utility functions that are used across the application
+- Under **types folder you will find the typescript types
+- Under **__tests__** folder you will find jest tests
+- Under **stories** folder you can find stories for component testing using storybook
+- Under **styles** you will find the global.css file that contains CSS classes
 - Dockerfile included in the root dir of the project
-- Configuration files such as (tailwind.config.js, tsconfig.json, next.config.js) can be found at the root dir of the project
+- Configuration files such as (tsconfig.json, next.config.js, .eslintrrc.json, .prettierrc.json, jest.config.js, jest.setup.ts, lint-stages.config.js) can be found at the root dir of the project
 
 ## Available Scripts
 
