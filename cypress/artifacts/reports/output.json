@@ -5,9 +5,9 @@
     "passes": 7,
     "pending": 0,
     "failures": 0,
-    "start": "2023-02-21T09:03:59.346Z",
-    "end": "2023-02-21T09:04:21.670Z",
-    "duration": 16613,
+    "start": "2023-02-21T10:25:16.343Z",
+    "end": "2023-02-21T10:25:32.804Z",
+    "duration": 12042,
     "testsRegistered": 7,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b2266f57-a071-421c-ad5a-a37524f2b4e5",
+      "uuid": "2a496992-20d0-4f17-8171-68065ba8e357",
       "title": "",
       "fullFile": "cypress/e2e/home.cy.ts",
       "file": "cypress/e2e/home.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "59340ce7-3a3e-428b-bb87-ddef7caf0c7f",
+          "uuid": "49949eb4-b0da-49c1-858e-6cf21eaeadfc",
           "title": "Home Screen",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should be able to load app on home page",
               "fullTitle": "Home Screen Should be able to load app on home page",
               "timedOut": null,
-              "duration": 3417,
+              "duration": 1235,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.location('pathname').should('eq', '/').end();",
               "err": {},
-              "uuid": "4db4fb4f-7dfb-4557-a4e2-ee4f5ce276ff",
-              "parentUUID": "59340ce7-3a3e-428b-bb87-ddef7caf0c7f",
+              "uuid": "0075a2ca-43a1-4127-bad2-4154cd0dd4be",
+              "parentUUID": "49949eb4-b0da-49c1-858e-6cf21eaeadfc",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Should be able to load navbar component on home page",
               "fullTitle": "Home Screen Should be able to load navbar component on home page",
               "timedOut": null,
-              "duration": 1279,
+              "duration": 829,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.get('[data-cy=\"header\"]')\n    .should('be.visible')\n    .and('have.css', 'background-color')\n    .and('eq', 'rgb(43, 37, 55)');\ncy.get('[data-cy=\"header\"]').within(() => {\n    cy.get('[data-cy=\"header-logo\"]')\n        .should('be.visible')\n        .and('have.css', 'animation')\n        .and('eq', '4s ease-in-out 0s infinite normal none running float-btc');\n    cy.get('[data-cy=\"header-title\"]')\n        .should('be.visible')\n        .contains('BTCScan');\n    cy.get('[data-cy=\"react-select\"]').should('be.visible');\n});",
               "err": {},
-              "uuid": "82c90927-d14f-413a-807b-cd5785a38924",
-              "parentUUID": "59340ce7-3a3e-428b-bb87-ddef7caf0c7f",
+              "uuid": "0019b9d8-0dfc-4c72-8bf5-58247144edf8",
+              "parentUUID": "49949eb4-b0da-49c1-858e-6cf21eaeadfc",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Should be able to load main component on home page",
               "fullTitle": "Home Screen Should be able to load main component on home page",
               "timedOut": null,
-              "duration": 1314,
+              "duration": 762,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "cy.get('[data-cy=\"main\"]').should('be.visible');\ncy.get('[data-cy=\"main\"]').within(() => {\n    cy.get('[data-cy=\"tabs-controller\"]').should('be.visible');\n    cy.get('[data-cy=\"card\"]').should('be.visible');\n    cy.get('[data-cy=\"subscription-btn\"]').should('be.visible');\n});",
               "err": {},
-              "uuid": "f2c02771-1634-4818-a745-a45767e83b70",
-              "parentUUID": "59340ce7-3a3e-428b-bb87-ddef7caf0c7f",
+              "uuid": "7e8ed8b0-33c2-4a50-a141-5f64e4861931",
+              "parentUUID": "49949eb4-b0da-49c1-858e-6cf21eaeadfc",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "Should be able to load footer component on home page",
               "fullTitle": "Home Screen Should be able to load footer component on home page",
               "timedOut": null,
-              "duration": 718,
+              "duration": 721,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -101,23 +101,23 @@
               "context": null,
               "code": "cy.get('[data-cy=\"footer\"]').should('be.visible');\ncy.get('[data-cy=\"footer\"]').within(() => {\n    cy.get('[data-cy=\"divider\"]')\n        .should('be.visible')\n        .and('have.css', 'border-color')\n        .and('eq', 'rgb(231, 234, 243)');\n    cy.get('[data-cy=\"footer-wrapper\"]')\n        .should('be.visible')\n        .children()\n        .first()\n        .should('be.visible')\n        .contains('Assignement for Zeply | FullStack JS Role');\n    cy.get('[data-cy=\"footer-wrapper\"]')\n        .should('be.visible')\n        .children()\n        .last()\n        .should('be.visible')\n        .contains('@All rights reserved | BTCScan');\n});",
               "err": {},
-              "uuid": "8bc2bdf3-823b-45bd-bcd0-15a835c12beb",
-              "parentUUID": "59340ce7-3a3e-428b-bb87-ddef7caf0c7f",
+              "uuid": "c0b35a95-9cb9-4bc7-bdc8-5ec025b1a0b8",
+              "parentUUID": "49949eb4-b0da-49c1-858e-6cf21eaeadfc",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4db4fb4f-7dfb-4557-a4e2-ee4f5ce276ff",
-            "82c90927-d14f-413a-807b-cd5785a38924",
-            "f2c02771-1634-4818-a745-a45767e83b70",
-            "8bc2bdf3-823b-45bd-bcd0-15a835c12beb"
+            "0075a2ca-43a1-4127-bad2-4154cd0dd4be",
+            "0019b9d8-0dfc-4c72-8bf5-58247144edf8",
+            "7e8ed8b0-33c2-4a50-a141-5f64e4861931",
+            "c0b35a95-9cb9-4bc7-bdc8-5ec025b1a0b8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6728,
+          "duration": 3547,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -133,7 +133,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "a3fbf093-2796-4bdc-b997-9423992a617a",
+      "uuid": "74e23b01-73a0-4460-982f-34336093c596",
       "title": "",
       "fullFile": "cypress/e2e/notifications.cy.ts",
       "file": "cypress/e2e/notifications.cy.ts",
@@ -142,7 +142,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5c7fc6cc-aea7-47f5-92a8-bb88b8aec9c9",
+          "uuid": "826e7e48-4693-40b5-b6fc-4dcc7393b4d5",
           "title": "Subscription to txns toaster",
           "fullFile": "",
           "file": "",
@@ -153,7 +153,7 @@
               "title": "Should be able to stop notifications",
               "fullTitle": "Subscription to txns toaster Should be able to stop notifications",
               "timedOut": null,
-              "duration": 2309,
+              "duration": 2016,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -162,8 +162,8 @@
               "context": null,
               "code": "cy.get('[data-cy=\"subscription-btn\"]').should('be.visible').click();",
               "err": {},
-              "uuid": "37a7f7fd-8d09-4d74-bbaf-ec31f1f7340c",
-              "parentUUID": "5c7fc6cc-aea7-47f5-92a8-bb88b8aec9c9",
+              "uuid": "2e7caabd-7cb7-492b-bd8a-5e72b6766a69",
+              "parentUUID": "826e7e48-4693-40b5-b6fc-4dcc7393b4d5",
               "isHook": false,
               "skipped": false
             },
@@ -171,7 +171,7 @@
               "title": "Should be able to start notifications",
               "fullTitle": "Subscription to txns toaster Should be able to start notifications",
               "timedOut": null,
-              "duration": 3280,
+              "duration": 3014,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -180,21 +180,21 @@
               "context": null,
               "code": "cy.get('[data-cy=\"subscription-btn\"]')\n    .should('be.visible')\n    .click()\n    .wait(1000)\n    .click();",
               "err": {},
-              "uuid": "4c9f8b58-a894-4f0a-ad95-f2234fb02da3",
-              "parentUUID": "5c7fc6cc-aea7-47f5-92a8-bb88b8aec9c9",
+              "uuid": "8e21638a-1237-4c3f-ad6a-8b9d74aa3324",
+              "parentUUID": "826e7e48-4693-40b5-b6fc-4dcc7393b4d5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "37a7f7fd-8d09-4d74-bbaf-ec31f1f7340c",
-            "4c9f8b58-a894-4f0a-ad95-f2234fb02da3"
+            "2e7caabd-7cb7-492b-bd8a-5e72b6766a69",
+            "8e21638a-1237-4c3f-ad6a-8b9d74aa3324"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5589,
+          "duration": 5030,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -210,7 +210,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "809053bf-bc3b-4b7d-ba67-dbe4ebfd005e",
+      "uuid": "500c4ba9-5e18-4e97-81a6-e6124a7bbd94",
       "title": "",
       "fullFile": "cypress/e2e/tabs.cy.ts",
       "file": "cypress/e2e/tabs.cy.ts",
@@ -219,7 +219,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "73795c6d-1ed9-46df-b723-0479eb8b1a5e",
+          "uuid": "0f60c806-ca8b-4295-b154-ce52f08ff3e1",
           "title": "Tabs Controller Navigation",
           "fullFile": "",
           "file": "",
@@ -230,7 +230,7 @@
               "title": "Should be able to change tabs",
               "fullTitle": "Tabs Controller Navigation Should be able to change tabs",
               "timedOut": null,
-              "duration": 4296,
+              "duration": 3465,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -239,20 +239,20 @@
               "context": null,
               "code": "cy.location('pathname').should('eq', '/').end();\ncy.get('[data-cy=\"tabs-controller\"]').should('be.visible');\ncy.get('[data-cy=\"tab\"]').first().contains('Last five transactions');\ncy.get('[data-cy=\"tab\"]')\n    .first()\n    .should('have.css', 'text-decoration-line')\n    .and('eq', 'underline');\ncy.get('[data-cy=\"tab\"]').last().click().wait(500);\ncy.get('[data-cy=\"tab\"]')\n    .last()\n    .should('have.css', 'text-decoration-line')\n    .and('eq', 'underline');",
               "err": {},
-              "uuid": "4fe4866a-574e-4d08-8dca-432af4ce1389",
-              "parentUUID": "73795c6d-1ed9-46df-b723-0479eb8b1a5e",
+              "uuid": "90fe9c7e-ea46-464b-bbc6-e12f206e9e17",
+              "parentUUID": "0f60c806-ca8b-4295-b154-ce52f08ff3e1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4fe4866a-574e-4d08-8dca-432af4ce1389"
+            "90fe9c7e-ea46-464b-bbc6-e12f206e9e17"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4296,
+          "duration": 3465,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

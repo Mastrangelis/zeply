@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo } from 'react';
 import useGetTransactions from '@/hooks/useGetTransactions';
 import { AccordionCard } from '@/components/Cards';

@@ -1,12 +1,12 @@
 import {
-  TxnOut,
-  TxnInput,
-  Txn,
-  LatestBlock,
-  AddressDetails,
-  UnspentOutput,
-} from "@/types/blockchain";
-import { Currency, Prices } from "context/SelectCurrencyContext";
+    TxnOut,
+    TxnInput,
+    Txn,
+    LatestBlock,
+    AddressDetails,
+    UnspentOutput
+} from '@/types/blockchain';
+import { Currency, Prices } from 'context/SelectCurrencyContext';
 
 /**
  * @description Convert shatoshis to BTC
@@ -14,7 +14,7 @@ import { Currency, Prices } from "context/SelectCurrencyContext";
  * @returns {number} the amount of shatoshis in BTC
  */
 const convertToBTC = (n: number) => {
-  return n / Math.pow(10, 9);
+    return n / Math.pow(10, 9);
 };
 
 /**
@@ -23,7 +23,7 @@ const convertToBTC = (n: number) => {
  * @returns {number} The number of shatoshis for all the ouputs of the tx
  */
 const calculateTotalBtcOut = (out: TxnOut[]) => {
-  return out?.reduce((acc: number, val: TxnOut) => (acc += val.value), 0);
+    return out?.reduce((acc: number, val: TxnOut) => (acc += val.value), 0);
 };
 
 /**
@@ -32,10 +32,10 @@ const calculateTotalBtcOut = (out: TxnOut[]) => {
  * @returns {number} The number of shatoshis for all the inputs of the tx
  */
 const calculateTotalBtcIn = (inputs: TxnInput[]) => {
-  return inputs?.reduce(
-    (acc: number, val: TxnInput) => (acc += val.prev_out.value),
-    0
-  );
+    return inputs?.reduce(
+        (acc: number, val: TxnInput) => (acc += val.prev_out.value),
+        0
+    );
 };
 
 /**
@@ -46,7 +46,7 @@ const calculateTotalBtcIn = (inputs: TxnInput[]) => {
  * @returns {number} the diff of totalInput and totalOutput in shatoshis
  */
 const calculateFees = ({ inputs, out }: Txn) => {
-  return calculateTotalBtcIn(inputs) - calculateTotalBtcOut(out);
+    return calculateTotalBtcIn(inputs) - calculateTotalBtcOut(out);
 };
 
 /**
@@ -59,11 +59,11 @@ const calculateFees = ({ inputs, out }: Txn) => {
  * @returns {number} the total block confirmations
  */
 const numberOfConfirmations = (latestBlock: LatestBlock, txn: Txn) => {
-  if (!txn?.block_height) return 0;
-  else {
-    const { block_height } = txn;
-    return latestBlock?.height - block_height + 1;
-  }
+    if (!txn?.block_height) return 0;
+    else {
+        const { block_height } = txn;
+        return latestBlock?.height - block_height + 1;
+    }
 };
 
 /**
@@ -73,12 +73,12 @@ const numberOfConfirmations = (latestBlock: LatestBlock, txn: Txn) => {
  * @returns {string} the number of bytes plus the size in a string e.g "5 KB"
  */
 const formatBytes = (bytes: number, decimals?: number) => {
-  if (bytes == 0) return "0 Bytes";
-  let k = 1024,
-    dm = decimals || 2,
-    sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
-    i = Math.floor(Math.log(bytes) / Math.log(k));
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+    if (bytes == 0) return '0 Bytes';
+    const k = 1024,
+        dm = decimals || 2,
+        sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+        i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 };
 
 /**
@@ -90,16 +90,16 @@ const formatBytes = (bytes: number, decimals?: number) => {
  * @returns {number} converted in the selected currency
  */
 const currencyConverter = (
-  amount: number,
-  prices: Prices,
-  selectedCurrency?: Currency
+    amount: number,
+    prices: Prices,
+    selectedCurrency?: Currency
 ) => {
-  const shatoshisToBTC = convertToBTC(amount);
-  if (selectedCurrency === "btc" || !prices) {
-    return shatoshisToBTC.toFixed(3);
-  }
-  const currencyTo = selectedCurrency === "eur" ? "EUR" : "USD";
-  return (prices[currencyTo] * shatoshisToBTC).toFixed(3);
+    const shatoshisToBTC = convertToBTC(amount);
+    if (selectedCurrency === 'btc' || !prices) {
+        return shatoshisToBTC.toFixed(3);
+    }
+    const currencyTo = selectedCurrency === 'eur' ? 'EUR' : 'USD';
+    return (prices[currencyTo] * shatoshisToBTC).toFixed(3);
 };
 
 /**
@@ -111,29 +111,29 @@ const currencyConverter = (
  * @returns the transaction formmated
  */
 const formatTxn = (
-  txn: Txn,
-  latestBlock: LatestBlock,
-  prices: Prices,
-  selectedCurrency?: Currency
+    txn: Txn,
+    latestBlock: LatestBlock,
+    prices: Prices,
+    selectedCurrency?: Currency
 ) => ({
-  hash: txn.hash,
-  size: formatBytes(txn.size),
-  time: txn.time,
-  block: `${txn.block_height} (${numberOfConfirmations(
-    latestBlock,
-    txn
-  )} Confirmation Blocks)`,
-  totalBtcOutput: currencyConverter(
-    calculateTotalBtcOut(txn.out),
-    prices,
-    selectedCurrency
-  ),
-  totalBtcInput: currencyConverter(
-    calculateTotalBtcIn(txn.inputs),
-    prices,
-    selectedCurrency
-  ),
-  totalFees: currencyConverter(calculateFees(txn), prices, selectedCurrency),
+    hash: txn.hash,
+    size: formatBytes(txn.size),
+    time: txn.time,
+    block: `${txn.block_height} (${numberOfConfirmations(
+        latestBlock,
+        txn
+    )} Confirmation Blocks)`,
+    totalBtcOutput: currencyConverter(
+        calculateTotalBtcOut(txn.out),
+        prices,
+        selectedCurrency
+    ),
+    totalBtcInput: currencyConverter(
+        calculateTotalBtcIn(txn.inputs),
+        prices,
+        selectedCurrency
+    ),
+    totalFees: currencyConverter(calculateFees(txn), prices, selectedCurrency)
 });
 
 /**
@@ -142,7 +142,7 @@ const formatTxn = (
  * @returns {number} the total amount of the values for each unspent output in shatoshis
  */
 const calculateTotalBTCUnspent = (unspent: UnspentOutput[]) => {
-  return unspent?.reduce((acc, item) => (acc += +item.value), 0);
+    return unspent?.reduce((acc, item) => (acc += +item.value), 0);
 };
 
 /**
@@ -153,42 +153,42 @@ const calculateTotalBTCUnspent = (unspent: UnspentOutput[]) => {
  * @returns the formated addres
  */
 const formatAddr = (
-  addr: AddressDetails,
-  prices: Prices,
-  selectedCurrency?: Currency
+    addr: AddressDetails,
+    prices: Prices,
+    selectedCurrency?: Currency
 ) => ({
-  address: addr.address.address,
-  numberOfTransactions: addr.address.n_tx,
-  totalBtcReceived: currencyConverter(
-    addr.address.total_received,
-    prices,
-    selectedCurrency
-  ),
-  totalBtcSent: currencyConverter(
-    addr.address.total_sent,
-    prices,
-    selectedCurrency
-  ),
-  totalBtcUnspent: currencyConverter(
-    calculateTotalBTCUnspent(addr.unspentOutputs),
-    prices,
-    selectedCurrency
-  ),
-  finalBalance: currencyConverter(
-    addr.address.final_balance,
-    prices,
-    selectedCurrency
-  ),
+    address: addr.address.address,
+    numberOfTransactions: addr.address.n_tx,
+    totalBtcReceived: currencyConverter(
+        addr.address.total_received,
+        prices,
+        selectedCurrency
+    ),
+    totalBtcSent: currencyConverter(
+        addr.address.total_sent,
+        prices,
+        selectedCurrency
+    ),
+    totalBtcUnspent: currencyConverter(
+        calculateTotalBTCUnspent(addr.unspentOutputs),
+        prices,
+        selectedCurrency
+    ),
+    finalBalance: currencyConverter(
+        addr.address.final_balance,
+        prices,
+        selectedCurrency
+    )
 });
 
 export {
-  currencyConverter,
-  formatAddr,
-  formatTxn,
-  formatBytes,
-  convertToBTC,
-  calculateFees,
-  calculateTotalBtcIn,
-  calculateTotalBtcOut,
-  numberOfConfirmations,
+    currencyConverter,
+    formatAddr,
+    formatTxn,
+    formatBytes,
+    convertToBTC,
+    calculateFees,
+    calculateTotalBtcIn,
+    calculateTotalBtcOut,
+    numberOfConfirmations
 };
