@@ -21,7 +21,6 @@ const SearchTab = () => {
   const { selectedCurrency, prices } = useSelectCurrencyContext();
 
   const item: any = useMemo(() => {
-    debugger;
     if (isLoading || isEmptyObject(searchResult)) return {};
     if (searchFilter === Filter.TRANSACTION) {
       return formatTxn(

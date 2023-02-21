@@ -11,7 +11,7 @@ export default function Toaster() {
       transition={Flip}
       toastClassName={(options: any) =>
         clsx({
-          "flex my-[60px] py-[14px] w-[430px] rounded-md default-transition light-blue-shadow hover:cursor-pointer":
+          "flex my-[20px] py-[14px] w-[430px] rounded-md default-transition light-blue-shadow hover:cursor-pointer":
             true,
           "bg-positive-100": options.type === "success",
           "bg-[#E9E4FF]": options.type === "warning",
