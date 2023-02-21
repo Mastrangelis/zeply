@@ -106,3 +106,5 @@ When storybook dev server is up and running you will be able to see the followin
 ![Screenshot 2023-02-21 at 11 07 35 AM](https://user-images.githubusercontent.com/48323010/220299604-e562adfb-2d74-442e-9d4a-0334f80efe63.png)
 ![Screenshot 2023-02-21 at 11 07 45 AM](https://user-images.githubusercontent.com/48323010/220299621-02f5ba28-75dd-435d-a816-78a4dc822369.png)
 ![Screenshot 2023-02-21 at 11 08 28 AM](https://user-images.githubusercontent.com/48323010/220299634-f2fbf70d-3e9e-48c8-9060-daec81ad6d6e.png)
+![Screenshot 2023-02-21 at 11 09 28 AM](https://user-images.githubusercontent.com/48323010/220299847-6fb1a96f-6915-4db6-9489-89aae94b6dcf.png)
+
