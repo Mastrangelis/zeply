@@ -25,13 +25,13 @@ For the project the following technologies and libraries are used
 
 - Under **app** folder you will find the starter files as per NextJS 13 experimental feauture where you can define your appDir.
 - Under **sections** you will find section components that define the layout of the application such as (Layout, Navbar, Body, Footer)
-- Under **components you will find all the components created for this project
-- Under **constants folder you will find some files containing some constant variables that are used across the application.
-- Under **context folder you will find context providers for variables and functions to be shared in components.
-- Under **hooks folder you will find some custom react hooks that are used across the application.
-- Under **utils folder you will find utility functions that are used across the application
+- Under **components** you will find all the components created for this project
+- Under **constants** folder you will find some files containing some constant variables that are used across the application.
+- Under **context** folder you will find context providers for variables and functions to be shared in components.
+- Under **hooks** folder you will find some custom react hooks that are used across the application.
+- Under **utils** folder you will find utility functions that are used across the application
 - Under **cypress** folder you will find everything related to cypress e2e tests
-- Under **types folder you will find the typescript types
+- Under **types** folder you will find the typescript types
 - Under **__tests__** folder you will find jest tests
 - Under **stories** folder you can find stories for component testing using storybook
 - Under **styles** you will find the global.css file that contains CSS classes
