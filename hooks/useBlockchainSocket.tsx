@@ -85,7 +85,7 @@ const useBlockchainSocket = () => {
     const index = shallowCopy.findIndex(
       (address: SubscribedAddress) => address.addr === addr
     );
-    debugger;
+
     if (index > -1) {
       if (shallowCopy[index].subscribed) {
         shallowCopy.splice(index, 1, {
