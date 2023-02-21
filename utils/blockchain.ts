@@ -116,7 +116,7 @@ const formatTxn = (
     prices: Prices,
     selectedCurrency?: Currency
 ) => ({
-    hash: txn.hash,
+    hash: txn?.hash || '',
     size: formatBytes(txn.size),
     time: txn.time,
     block: `${txn.block_height} (${numberOfConfirmations(
