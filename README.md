@@ -14,6 +14,7 @@ For the project the following technologies and libraries are used
 - Many custom reusable components Toasters, Buttons, Cards, TextFields, etc.
 - Taildind CSS for styling
 - Functional and Unit Testing with Jest/RTL
+- E2E testing with Cypress.io
 - Component Testing storybook (manual testing)
 - Dockerfile for containerizing the application
 - Husky for pre-commit scripts
@@ -29,6 +30,7 @@ For the project the following technologies and libraries are used
 - Under **context folder you will find context providers for variables and functions to be shared in components.
 - Under **hooks folder you will find some custom react hooks that are used across the application.
 - Under **utils folder you will find utility functions that are used across the application
+- Under **cypress** folder you will find everything related to cypress e2e tests
 - Under **types folder you will find the typescript types
 - Under **__tests__** folder you will find jest tests
 - Under **stories** folder you can find stories for component testing using storybook
