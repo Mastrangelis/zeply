@@ -1,47 +1,57 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { Container } from "@/components";
-import { CryptoIconSelect } from "@/components/Select";
-import { currencyOptions } from "constants/options";
-import { useSelectCurrencyContext } from "context/SelectCurrencyContext";
+import Image from 'next/image';
+import { Container } from '@/components';
+import { CryptoIconSelect } from '@/components/Select';
+import { currencyOptions } from 'constants/options';
+import { useSelectCurrencyContext } from 'context/SelectCurrencyContext';
 
 const Navbar = () => {
-  const { onSelect } = useSelectCurrencyContext();
+    const { onSelect } = useSelectCurrencyContext();
 
-  const NavbarTitle = () => {
-    return <div className="header__title">BTCScan</div>;
-  };
+    const NavbarTitle = () => {
+        return (
+            <div data-cy="header-title" className="header__title">
+                BTCScan
+            </div>
+        );
+    };
 
-  const NavbarSelectCurrency = () => {
+    const NavbarSelectCurrency = () => {
+        return (
+            <div className="header__select-currency">
+                <div className="flex items-center justify-between">
+                    <span className="mr-2 text-2xl text-white">
+                        Select currency in:{' '}
+                    </span>
+                    <CryptoIconSelect
+                        options={currencyOptions}
+                        onChange={onSelect}
+                    />
+                </div>
+            </div>
+        );
+    };
+
     return (
-      <div className="header__select-currency">
-        <div className="flex items-center justify-between">
-          <span className="mr-2 text-2xl text-white">Select currency in: </span>
-          <CryptoIconSelect options={currencyOptions} onChange={onSelect} />
+        <div data-testid="header" data-cy="header" className="header">
+            <Container>
+                <div className="header__wrapper">
+                    <Image
+                        className="btc-img"
+                        src="/btc.svg"
+                        alt="BTC-animated-logo"
+                        height={56}
+                        width={56}
+                        quality={100}
+                        data-cy="header-logo"
+                    />
+                    <NavbarTitle />
+                    <NavbarSelectCurrency />
+                </div>
+            </Container>
         </div>
-      </div>
     );
-  };
-
-  return (
-    <div data-testid="header" className="header">
-      <Container>
-        <div className="header__wrapper">
-          <Image
-            className="btc-img"
-            src="/btc.svg"
-            alt="BTC-animated-logo"
-            height={56}
-            width={56}
-            quality={100}
-          />
-          <NavbarTitle />
-          <NavbarSelectCurrency />
-        </div>
-      </Container>
-    </div>
-  );
 };
 
 export default Navbar;
